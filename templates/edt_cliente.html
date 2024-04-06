@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <header class="form">
+        <h1>Editar Cadastro de Cliente</h1>
+        <div class="buttons">
+            <a class="buttons__returnHome" href="{{url_for('index')}}">Voltar</a>
+        </div>
+    </header>
+    <form method="post" action="/edt_cliente/{{cliente[0]}}">
+        <label>Nome</label>
+        <input type="text" name="nome" value="{{cliente[1]}}">
+        <label>Cidade</label>
+        <input type="text" name="cidade" value="{{cliente[2]}}">
+        <label>Telefone</label>
+        <input type="tel" name="telefone" value="{{cliente[3]}}">
+        <label>Email</label>
+        <input type="email" name="email" value="{{cliente[4]}}">
+        <label>Data de Nascimento</label>
+        <input type="date" name="data_nasc" value="{{cliente[5]}}">
+
+        <input type="submit" value="Salvar alterações">
+    </form>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Controle de Vendas</h1>
+        <div class="buttons">
+            <a class="buttons__addCliente" href="{{url_for('pageAddCliente')}}">Adicionar Cliente</a>
+            <a class="buttons__addProduto" href="{{url_for('pageAddProduto')}}">Adicionar Produto</a>
+            <a class="buttons__addVenda" href="{{url_for('pageAddVenda')}}">Adicionar Venda</a>
+        </div>
+    </header>
+    <aside>
+        <div>Direitos reservados Pedro Barroso Neto &copy;2024</div>
+        <span>
+            <a href="https://github.com/pedrobarroso-n" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+            </a>
+            <a href="https://www.linkedin.com/in/pedrobarroso-n" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+        </span>
+    </aside>
+    <details>
+        <summary>Clientes</summary>
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>Nome</td>
+                <td>Cidade</td>
+                <td>Telefone</td>
+                <td>Email</td> 
+                <td>Data Nascimento</td>
+                <td>Ações</td>      
+            </tr>
+            {% for row in data_cliente %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td class="funcoes">
+                    <a href="{{url_for('edt_cliente',id=row[0])}}">Editar</a>
+                    <a href="{{url_for('del_cliente',id=row[0])}}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </details>
+    <details>
+        <summary>Produtos</summary>
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>Nome</td>
+                <td>Preço</td>
+                <td>Marca</td>
+                <td>Categoria</td>
+                <td>Quantidade</td> 
+                <td>Ações</td>      
+            </tr>
+            {% for row in data_produto %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td class="funcoes">
+                    <a href="{{url_for('edt_produto',id=row[0])}}">Editar</a>
+                    <a href="{{url_for('del_produto',id=row[0])}}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </details>
+    <details>
+        <summary>Vendas</summary>
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>Data</td>
+                <td>Valor</td> 
+                <td>Funcionario</td>
+                <td>Id Cliente</td>
+                <td>Id Produto</td>
+                <td>Ações</td>      
+            </tr>
+            {% for row in data_venda %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td class="funcoes">
+                    <a href="{{url_for('edt_venda',id=row[0])}}">Editar</a>
+                    <a href="{{url_for('del_venda',id=row[0])}}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </details>
+</body>
+</html>

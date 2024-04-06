@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Venda</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <header class="form">
+        <h1>Editar Cadastro de Venda</h1>
+        <div class="buttons">
+            <a class="buttons__returnHome" href="{{url_for('index')}}">Voltar</a>
+        </div>
+    </header>
+    <form method="post" action="/edt_venda/{{venda[0]}}">
+        <label>Data</label>
+        <input type="date" name="data_venda" value="{{venda[1]}}">
+        <label>Valor</label>
+        <input type="text" name="valor_total" value="{{venda[2]}}">
+        <label>Funcionario</label>
+        <input type="text" name="funcionario" value="{{venda[3]}}">
+        <label>ID do Cliente</label>
+        <input type="number" name="idcliente" value="{{venda[4]}}">
+        <label>ID do Produto</label>
+        <input type="number" name="idproduto" value="{{venda[5]}}">
+
+        <input type="submit" value="Salvar alterações">
+    </form>
+</body>
+</html>

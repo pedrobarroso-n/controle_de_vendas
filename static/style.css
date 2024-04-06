@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 96vw;
+    margin: 0 auto;
+}
+header {
+    margin-top: 45px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    border-bottom: 1px solid black;
+}
+header.form {
+    margin-bottom: 45px;
+}
+h1 {
+    font-family: sans-serif;
+    font-size: 2.65rem;
+}
+a { 
+    text-decoration: none;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.buttons * {
+    padding: 8px;
+    border-radius: 6px;
+    color: black;
+    font-family: sans-serif;
+    font-size: 1rem;
+}    
+.buttons *:hover {
+    transition: transform 0.2s ease-in-out; 
+    transform: translateY(-2px);
+}       
+.buttons .buttons__addCliente { 
+    background-color: #44d0e9;
+}
+.buttons .buttons__addProduto { 
+    background-color: rgb(69, 248, 93);
+}
+.buttons .buttons__addVenda { 
+    background-color: #fffc41;
+}
+.buttons .buttons__returnHome { 
+    background-color: #ff0000;
+}
+aside {
+    margin: 15px 0 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+aside div {
+    font-family: sans-serif;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+span ion-icon {
+    font-size: 25px;
+    color: #000000;
+}
+summary {
+    padding: 6px;
+    font-family: sans-serif;
+    border: 1px solid #ccc;
+    margin: 36px 0 14px 0;
+    cursor: pointer;
+}
+summary:hover {
+    border: 1px solid #000000;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table * {
+    padding: 4px 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+tr:first-child { 
+    font-weight: 700;
+}
+td > a {
+    color: blue;
+    margin-left: 20px;
+}
+td > a:hover {
+    text-decoration: underline;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+label { 
+    margin: 0 10%;
+    font-family: sans-serif;
+}
+input {
+    margin: 0 10%;
+    width: 40vw;
+    padding: 8px;
+}

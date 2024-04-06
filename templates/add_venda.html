@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Venda</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <header class="form">
+        <h1>Cadastro de Venda</h1>
+        <div class="buttons">
+            <a class="buttons__returnHome" href="{{url_for('index')}}">Voltar</a>
+            <a class="buttons__addCliente" href="{{url_for('pageAddCliente')}}">Adicionar Cliente</a>
+            <a class="buttons__addProduto" href="{{url_for('pageAddProduto')}}">Adicionar Produto</a>
+        </div>
+    </header>
+    <form action="{{url_for('add_venda')}}" method="post">
+        <label>ID</label>
+        <input type="number" name="idvenda" required>
+        <label>Data</label>
+        <input type="date" name="data_venda" required>
+        <label>Valor</label>
+        <input type="text" name="valor_total" required>
+        <label>Funcionario</label>
+        <input type="text" name="funcionario" required>
+        <label>ID do Cliente</label>
+        <input type="number" name="idcliente" required>
+        <label>ID do Produto</label>
+        <input type="number" name="idproduto" required>
+
+        <input type="submit" value="Cadastrar Venda">
+    </form>
+</body>
+</html>
